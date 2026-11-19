@@ -1,0 +1,1389 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-11-18T12:32:08.937486+00:00",
+  "patterns": [
+    {
+      "id": "learned_1795005128935",
+      "domain": "Custom Architecture",
+      "title": "Board Design: first",
+      "keywords": [
+        "design",
+        "nodes",
+        "directly",
+        "canvas",
+        "captured",
+        "and",
+        "visual",
+        "first",
+        "from",
+        "connectors",
+        "board"
+      ],
+      "summary": "Directly captured 20 visual nodes and 0 connectors from canvas.",
+      "mode": "generate",
+      "source": "user_board",
+      "nodes": [
+        {
+          "id": "shape:KvKq4UCXLOQ1_3b6gAG5X",
+          "label": "1. Patient registrationCreate patient ID and demographic record \u2192 2",
+          "x": 11,
+          "y": -3,
+          "color": "black"
+        },
+        {
+          "id": "shape:upPNB2z_LuXqE_9DXXF4U",
+          "label": "2. Appointment / Walk-in / EmergencySchedule visit; emergencies go directly to triage \u2192 3",
+          "x": 450,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:wqDwFMU1jfCGMjnp4aUoD",
+          "label": "3. Triage & assessmentRecord vitals, urgency, allergies \u2192 4",
+          "x": 900,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:Ls-vbui4Lq4bcXligDnsL",
+          "label": "4. Doctor consultationReview history, diagnose, create care plan \u2192 5, 6, or 7",
+          "x": 1350,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:-avt_mocu8oQqM9OUNazl",
+          "label": "5. Laboratory & imagingOrder \u2192 collect sample / perform scan \u2192 validate results \u2192 4",
+          "x": 100,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:_NwZc5WXIIkZBmrjDerGX",
+          "label": "6. Outpatient treatmentPrescription, procedures, patient instructions \u2192 10 and 12",
+          "x": 450,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:93z_T2AfA0rx-QEsT9poI",
+          "label": "7. Inpatient admissionAllocate ward / bed; assign care team \u2192 8",
+          "x": 900,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:ImfNq99-qztjU4Y7SWJNc",
+          "label": "8. Inpatient careNursing, medication administration, rounds \u2192 5, 9, or 11",
+          "x": 1350,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:1sZDXVJTAfGFg8u9uCH5o",
+          "label": "9. Surgery / ProcedureConsent \u2192 scheduling \u2192 procedure \u2192 recovery \u2192 8",
+          "x": 100,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:1cskogP4jVRxugt2B_LvY",
+          "label": "10. PharmacyValidate prescription \u2192 dispense \u2192 update stock and charges",
+          "x": 450,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:ZGCg3nckVVTmqnSAwJDhk",
+          "label": "11. Discharge planningClinical clearance, summary, medication reconciliation \u2192 12 and 14",
+          "x": 900,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:zycDiEG6Abj8y7nbf2T68",
+          "label": "12. Billing & insuranceCapture charges throughout care; verify coverage and submit claims \u2192 13",
+          "x": 1350,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:nODnQgncxErWkh4hYA7Z5",
+          "label": "13. Payments & reconciliationCollect patient balance; track insurer payments \u2192 finance",
+          "x": 100,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:i9-sWrqyB20qX4jrDHPVw",
+          "label": "14. Follow-up careBook review, send reminders, monitor recovery \u2192 2 when needed",
+          "x": 450,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:AonAle5TU86zpso8o2KhW",
+          "label": "Shared electronic medical recordConnect registration, encounters, results, prescriptions, and discharge notes",
+          "x": 900,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:RmzFU08qO2s701pfKQEjK",
+          "label": "Inventory & procurementReorder request \u2192 approval \u2192 purchase \u2192 receipt \u2192 issue \u2192 stock tracking",
+          "x": 1350,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:KswjuHDPfTQ02sAjQKq8C",
+          "label": "HR & staff schedulingStaff records \u2192 credentials \u2192 shifts \u2192 attendance \u2192 payroll",
+          "x": 100,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:NsLs2fOgbBt9H-886sMyI",
+          "label": "Facilities & bed managementBed status, housekeeping, equipment maintenance, service requests",
+          "x": 450,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:KGU0Tf8Ci_77zyYAzSU8Q",
+          "label": "Finance & accountingBilling, payments, purchases, payroll \u2192 ledgers \u2192 reconciliation \u2192 reports",
+          "x": 900,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:B2RvG9KpgHUXlPWJxyglQ",
+          "label": "Administration & reportingRole-based access, consent, audit logs, backups, operational dashboards",
+          "x": 1350,
+          "y": 1200,
+          "color": "black"
+        }
+      ],
+      "arrows": [],
+      "learnedAt": "2026-11-18T12:32:08.935812+00:00"
+    },
+    {
+      "id": "learned_1795005010673",
+      "domain": "Custom Architecture",
+      "title": "Board Design: first",
+      "keywords": [
+        "design",
+        "nodes",
+        "directly",
+        "canvas",
+        "captured",
+        "and",
+        "visual",
+        "first",
+        "from",
+        "connectors",
+        "board"
+      ],
+      "summary": "Directly captured 20 visual nodes and 0 connectors from canvas.",
+      "mode": "generate",
+      "source": "user_board",
+      "nodes": [
+        {
+          "id": "shape:KvKq4UCXLOQ1_3b6gAG5X",
+          "label": "1. Patient registrationCreate patient ID and demographic record \u2192 2",
+          "x": 11,
+          "y": -3,
+          "color": "black"
+        },
+        {
+          "id": "shape:upPNB2z_LuXqE_9DXXF4U",
+          "label": "2. Appointment / Walk-in / EmergencySchedule visit; emergencies go directly to triage \u2192 3",
+          "x": 450,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:wqDwFMU1jfCGMjnp4aUoD",
+          "label": "3. Triage & assessmentRecord vitals, urgency, allergies \u2192 4",
+          "x": 900,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:Ls-vbui4Lq4bcXligDnsL",
+          "label": "4. Doctor consultationReview history, diagnose, create care plan \u2192 5, 6, or 7",
+          "x": 1350,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:-avt_mocu8oQqM9OUNazl",
+          "label": "5. Laboratory & imagingOrder \u2192 collect sample / perform scan \u2192 validate results \u2192 4",
+          "x": 100,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:_NwZc5WXIIkZBmrjDerGX",
+          "label": "6. Outpatient treatmentPrescription, procedures, patient instructions \u2192 10 and 12",
+          "x": 450,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:93z_T2AfA0rx-QEsT9poI",
+          "label": "7. Inpatient admissionAllocate ward / bed; assign care team \u2192 8",
+          "x": 900,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:ImfNq99-qztjU4Y7SWJNc",
+          "label": "8. Inpatient careNursing, medication administration, rounds \u2192 5, 9, or 11",
+          "x": 1350,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:1sZDXVJTAfGFg8u9uCH5o",
+          "label": "9. Surgery / ProcedureConsent \u2192 scheduling \u2192 procedure \u2192 recovery \u2192 8",
+          "x": 100,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:1cskogP4jVRxugt2B_LvY",
+          "label": "10. PharmacyValidate prescription \u2192 dispense \u2192 update stock and charges",
+          "x": 450,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:ZGCg3nckVVTmqnSAwJDhk",
+          "label": "11. Discharge planningClinical clearance, summary, medication reconciliation \u2192 12 and 14",
+          "x": 900,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:zycDiEG6Abj8y7nbf2T68",
+          "label": "12. Billing & insuranceCapture charges throughout care; verify coverage and submit claims \u2192 13",
+          "x": 1350,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:nODnQgncxErWkh4hYA7Z5",
+          "label": "13. Payments & reconciliationCollect patient balance; track insurer payments \u2192 finance",
+          "x": 100,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:i9-sWrqyB20qX4jrDHPVw",
+          "label": "14. Follow-up careBook review, send reminders, monitor recovery \u2192 2 when needed",
+          "x": 450,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:AonAle5TU86zpso8o2KhW",
+          "label": "Shared electronic medical recordConnect registration, encounters, results, prescriptions, and discharge notes",
+          "x": 900,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:RmzFU08qO2s701pfKQEjK",
+          "label": "Inventory & procurementReorder request \u2192 approval \u2192 purchase \u2192 receipt \u2192 issue \u2192 stock tracking",
+          "x": 1350,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:KswjuHDPfTQ02sAjQKq8C",
+          "label": "HR & staff schedulingStaff records \u2192 credentials \u2192 shifts \u2192 attendance \u2192 payroll",
+          "x": 100,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:NsLs2fOgbBt9H-886sMyI",
+          "label": "Facilities & bed managementBed status, housekeeping, equipment maintenance, service requests",
+          "x": 450,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:KGU0Tf8Ci_77zyYAzSU8Q",
+          "label": "Finance & accountingBilling, payments, purchases, payroll \u2192 ledgers \u2192 reconciliation \u2192 reports",
+          "x": 900,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:B2RvG9KpgHUXlPWJxyglQ",
+          "label": "Administration & reportingRole-based access, consent, audit logs, backups, operational dashboards",
+          "x": 1350,
+          "y": 1200,
+          "color": "black"
+        }
+      ],
+      "arrows": [],
+      "learnedAt": "2026-11-18T12:30:10.673068+00:00"
+    },
+    {
+      "id": "learned_1795004717172",
+      "domain": "HRMS & People Operations",
+      "title": "generate a human resources and payroll workflow for new empl",
+      "keywords": [
+        "onboarding",
+        "accepted",
+        "for",
+        "human",
+        "resources",
+        "offer",
+        "through",
+        "workflow",
+        "payroll",
+        "the",
+        "and",
+        "employees",
+        "review",
+        "first",
+        "new",
+        "from",
+        "generate",
+        "proposed"
+      ],
+      "summary": "Proposed HR and payroll onboarding workflow, from accepted offer through the first payroll review.",
+      "mode": "generate",
+      "source": "codex",
+      "nodes": [
+        {
+          "label": "1. Offer accepted\nConfirm role, manager, start date, and compensation.",
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "label": "2. Create employee record\nAssign employee ID and collect contact details securely.",
+          "x": 350.0,
+          "y": 0.0
+        },
+        {
+          "label": "3. Complete hiring documents\nCollect signed agreements and required work eligibility documents.",
+          "x": 700.0,
+          "y": 0.0
+        },
+        {
+          "label": "4. Set up payroll\nCollect applicable tax forms, payment details, and payroll authorization securely.",
+          "x": 1050.0,
+          "y": 0.0
+        },
+        {
+          "label": "5. Validate onboarding information\nHR and payroll check completeness and accuracy.\nMissing information \u2192 request corrections before proceeding.",
+          "x": 1400.0,
+          "y": 0.0
+        },
+        {
+          "label": "6. Configure pay and benefits\nSet pay schedule, compensation, applicable deductions, and benefit elections.",
+          "x": 1400.0,
+          "y": 300.0
+        },
+        {
+          "label": "7. Prepare employee access\nArrange equipment, accounts, timekeeping, and orientation.",
+          "x": 1050.0,
+          "y": 300.0
+        },
+        {
+          "label": "8. Complete first-day onboarding\nReview policies, explain payroll deadlines, and confirm employee self-service access.",
+          "x": 700.0,
+          "y": 300.0
+        },
+        {
+          "label": "9. Collect first pay-period inputs\nApprove hours, leave, and applicable pay adjustments before cutoff.",
+          "x": 350.0,
+          "y": 300.0
+        },
+        {
+          "label": "10. Calculate and review payroll\nCheck prorated pay, taxes, deductions, and net pay.\nErrors \u2192 correct inputs and recalculate.",
+          "x": 0.0,
+          "y": 300.0
+        },
+        {
+          "label": "11. Approve and process payroll\nAuthorized approver releases payment; issue payslip and required remittances.",
+          "x": 0.0,
+          "y": 600.0
+        },
+        {
+          "label": "12. Reconcile and follow up\nConfirm payment, reconcile payroll records, and resolve employee questions.",
+          "x": 350.0,
+          "y": 600.0
+        }
+      ],
+      "arrows": [],
+      "learnedAt": "2026-11-18T12:25:17.172685+00:00"
+    },
+    {
+      "id": "learned_1795004682562",
+      "domain": "Custom Architecture",
+      "title": "Board Design: Hospital Clinical Workflow",
+      "keywords": [
+        "design",
+        "nodes",
+        "directly",
+        "clinical",
+        "workflow",
+        "captured",
+        "canvas",
+        "and",
+        "visual",
+        "from",
+        "hospital",
+        "connectors",
+        "board"
+      ],
+      "summary": "Directly captured 2 visual nodes and 1 connectors from canvas.",
+      "mode": "generate",
+      "source": "user_board",
+      "nodes": [
+        {
+          "id": "s1",
+          "label": "1. Patient Registration",
+          "x": 100,
+          "y": 100,
+          "color": "blue"
+        },
+        {
+          "id": "s2",
+          "label": "2. Emergency Triage",
+          "x": 400,
+          "y": 100,
+          "color": "blue"
+        }
+      ],
+      "arrows": [
+        {
+          "from": "s1",
+          "to": "s2"
+        }
+      ],
+      "learnedAt": "2026-11-18T12:24:42.562443+00:00"
+    },
+    {
+      "id": "learned_1795004679543",
+      "domain": "Custom Architecture",
+      "title": "Board Design: first",
+      "keywords": [
+        "design",
+        "nodes",
+        "directly",
+        "canvas",
+        "captured",
+        "and",
+        "visual",
+        "first",
+        "from",
+        "connectors",
+        "board"
+      ],
+      "summary": "Directly captured 20 visual nodes and 0 connectors from canvas.",
+      "mode": "generate",
+      "source": "user_board",
+      "nodes": [
+        {
+          "id": "shape:SgXK_UZbzKeDTt2FCtC52",
+          "label": "1. Patient registrationCreate patient ID and demographic record \u2192 2",
+          "x": 11,
+          "y": -3,
+          "color": "black"
+        },
+        {
+          "id": "shape:jjyZ1yyyxUuB6kdjPxFo4",
+          "label": "2. Appointment / Walk-in / EmergencySchedule visit; emergencies go directly to triage \u2192 3",
+          "x": 450,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:Xv4cMzGUMPqKYjo8lYvQP",
+          "label": "3. Triage & assessmentRecord vitals, urgency, allergies \u2192 4",
+          "x": 900,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:yEnT00KVfwyu2b2FfNf4Y",
+          "label": "4. Doctor consultationReview history, diagnose, create care plan \u2192 5, 6, or 7",
+          "x": 1350,
+          "y": 100,
+          "color": "black"
+        },
+        {
+          "id": "shape:_LwsOaTp9ogr-W-PQuvhY",
+          "label": "5. Laboratory & imagingOrder \u2192 collect sample / perform scan \u2192 validate results \u2192 4",
+          "x": 100,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:yNJ5RwiPp7rBhtcvLz9ML",
+          "label": "6. Outpatient treatmentPrescription, procedures, patient instructions \u2192 10 and 12",
+          "x": 450,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:LfZ78JlINyHAMuLZ9cSnr",
+          "label": "7. Inpatient admissionAllocate ward / bed; assign care team \u2192 8",
+          "x": 900,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:_asxHJCMGT6YNDlf4V6sJ",
+          "label": "8. Inpatient careNursing, medication administration, rounds \u2192 5, 9, or 11",
+          "x": 1350,
+          "y": 300,
+          "color": "black"
+        },
+        {
+          "id": "shape:TeAeDF0mvDRnRW709ptRk",
+          "label": "9. Surgery / ProcedureConsent \u2192 scheduling \u2192 procedure \u2192 recovery \u2192 8",
+          "x": 100,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:cb9_dTpkB4niZhTw4f4UN",
+          "label": "10. PharmacyValidate prescription \u2192 dispense \u2192 update stock and charges",
+          "x": 450,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:Ks7iu2-oiKmQm98ASGafL",
+          "label": "11. Discharge planningClinical clearance, summary, medication reconciliation \u2192 12 and 14",
+          "x": 900,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:NJ3XeATRzjfNR2WTbW-84",
+          "label": "12. Billing & insuranceCapture charges throughout care; verify coverage and submit claims \u2192 13",
+          "x": 1350,
+          "y": 600,
+          "color": "black"
+        },
+        {
+          "id": "shape:U4dGtXlpsc2TeRiXGrWRN",
+          "label": "13. Payments & reconciliationCollect patient balance; track insurer payments \u2192 finance",
+          "x": 100,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:OVxWtw9tIGfwDKTWICrtl",
+          "label": "14. Follow-up careBook review, send reminders, monitor recovery \u2192 2 when needed",
+          "x": 450,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:vlFTJE3jCfaF_AnWwgu8o",
+          "label": "Shared electronic medical recordConnect registration, encounters, results, prescriptions, and discharge notes",
+          "x": 900,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:z5yEwUBAIw1QWgJhKFF10",
+          "label": "Inventory & procurementReorder request \u2192 approval \u2192 purchase \u2192 receipt \u2192 issue \u2192 stock tracking",
+          "x": 1350,
+          "y": 900,
+          "color": "black"
+        },
+        {
+          "id": "shape:6yjYpEEZh7QlLUUyQdE-t",
+          "label": "HR & staff schedulingStaff records \u2192 credentials \u2192 shifts \u2192 attendance \u2192 payroll",
+          "x": 100,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:lkQwjAcvBI6tUE_ielWMf",
+          "label": "Facilities & bed managementBed status, housekeeping, equipment maintenance, service requests",
+          "x": 450,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:Sn9L6AukoK5XNL73sy1hI",
+          "label": "Finance & accountingBilling, payments, purchases, payroll \u2192 ledgers \u2192 reconciliation \u2192 reports",
+          "x": 900,
+          "y": 1200,
+          "color": "black"
+        },
+        {
+          "id": "shape:-6DsprHbKuFzy5WGoJyqE",
+          "label": "Administration & reportingRole-based access, consent, audit logs, backups, operational dashboards",
+          "x": 1350,
+          "y": 1200,
+          "color": "black"
+        }
+      ],
+      "arrows": [],
+      "learnedAt": "2026-11-18T12:24:39.543758+00:00"
+    },
+    {
+      "id": "learned_1795004090178",
+      "domain": "Healthcare & Hospital ERP",
+      "title": "create hospital patient care journey workflow",
+      "keywords": [
+        "indicate",
+        "journey",
+        "through",
+        "nodes",
+        "create",
+        "workflow",
+        "patient",
+        "follow",
+        "alternate",
+        "care",
+        "decision",
+        "routes",
+        "arrival",
+        "from",
+        "hospital",
+        "proposed"
+      ],
+      "summary": "Proposed hospital patient care journey, from arrival through follow-up. Decision nodes indicate alternate routes.",
+      "mode": "generate",
+      "source": "codex",
+      "nodes": [
+        {
+          "label": "1. Patient arrival\nEmergency department or scheduled visit",
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "label": "2. Triage and immediate assessment\nAssess urgency; stabilize emergencies before registration",
+          "x": 350.0,
+          "y": 0.0
+        },
+        {
+          "label": "3. Registration and identification\nVerify patient identity, details, and consent",
+          "x": 700.0,
+          "y": 0.0
+        },
+        {
+          "label": "4. Clinical assessment\nHistory, examination, medications, and allergies",
+          "x": 1050.0,
+          "y": 0.0
+        },
+        {
+          "label": "5. Diagnostic tests, if needed\nLaboratory tests, imaging, and specialist consultation",
+          "x": 1400.0,
+          "y": 0.0
+        },
+        {
+          "label": "6. Diagnosis and shared care plan\nExplain findings, options, and patient preferences",
+          "x": 1750.0,
+          "y": 0.0
+        },
+        {
+          "label": "7. Disposition decision\nAdmit \u2192 inpatient care\nOutpatient care \u2192 discharge preparation\nHigher-level care \u2192 transfer",
+          "x": 2100.0,
+          "y": 0.0
+        },
+        {
+          "label": "8A. Inpatient treatment\nAssign care team; provide treatment and nursing care",
+          "x": 2450.0,
+          "y": -350.0
+        },
+        {
+          "label": "9A. Monitor and reassess\nReview response, pain, safety, and care goals\nDeterioration \u2192 urgent escalation\nNot ready \u2192 adjust treatment and repeat",
+          "x": 2800.0,
+          "y": -350.0
+        },
+        {
+          "label": "10A. Discharge readiness\nConfirm clinical stability and support needs\nReady \u2192 discharge preparation",
+          "x": 3150.0,
+          "y": -350.0
+        },
+        {
+          "label": "8B. Outpatient treatment\nProvide indicated care\nProceed to discharge preparation",
+          "x": 2450.0,
+          "y": 0.0
+        },
+        {
+          "label": "8C. Transfer to appropriate facility\nStabilize, coordinate acceptance and transport, and hand over care",
+          "x": 2450.0,
+          "y": 350.0
+        },
+        {
+          "label": "11. Discharge preparation\nReconcile medications; explain home care and warning signs\nConfirm understanding, referrals, and follow-up",
+          "x": 3500.0,
+          "y": 0.0
+        },
+        {
+          "label": "12. Transition home or to ongoing care\nShare care summary and confirm support arrangements",
+          "x": 3850.0,
+          "y": 0.0
+        },
+        {
+          "label": "13. Follow-up and recovery review\nAssess progress, results, and adherence\nNew or worsening symptoms \u2192 reassessment",
+          "x": 4200.0,
+          "y": 0.0
+        }
+      ],
+      "arrows": [],
+      "learnedAt": "2026-11-18T12:14:50.178855+00:00"
+    },
+    {
+      "id": "kb_hospital_erp",
+      "domain": "Healthcare & Hospital ERP",
+      "title": "Hospital Management & Patient Journey Workflow",
+      "keywords": [
+        "hospital",
+        "patient",
+        "clinic",
+        "health",
+        "doctor",
+        "triage",
+        "medical",
+        "appointment",
+        "healthcare",
+        "erp",
+        "inpatient",
+        "outpatient",
+        "pharmacy",
+        "ehr"
+      ],
+      "summary": "End-to-end clinical patient care pathway from registration and triage through consultation, diagnostics, inpatient/outpatient management, pharmacy, and billing.",
+      "nodes": [
+        {
+          "id": "h_1",
+          "label": "1. Patient Registration\nCreate patient ID & demographic record",
+          "x": 80,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "h_2",
+          "label": "2. Appointment / Walk-in\nSchedule visit; emergencies directly to triage",
+          "x": 360,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "h_3",
+          "label": "3. Triage & Assessment\nRecord vitals, urgency, and allergies",
+          "x": 640,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "h_4",
+          "label": "4. Doctor Consultation\nReview history, diagnose, create care plan",
+          "x": 920,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "h_5",
+          "label": "5. Laboratory & Imaging\nOrder sample, run scan & validate results",
+          "x": 920,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "h_6",
+          "label": "6. Inpatient Admission\nAllocate ward/bed, assign care team",
+          "x": 640,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "h_7",
+          "label": "7. Outpatient Treatment\nPrescriptions, minor procedures, care guidance",
+          "x": 360,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "h_8",
+          "label": "8. Pharmacy & Dispensing\nValidate prescription, dispense & deduct stock",
+          "x": 80,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "h_9",
+          "label": "9. Billing & Insurance Claims\nCapture charges, verify coverage & submit claims",
+          "x": 80,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "h_10",
+          "label": "10. Discharge Planning\nClinical clearance, summary & med reconciliation",
+          "x": 360,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "h_11",
+          "label": "11. Payments & Reconciliation\nPatient co-pay & insurer settlement",
+          "x": 640,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "h_12",
+          "label": "12. Follow-up & Telehealth\nSchedule review & monitor recovery",
+          "x": 920,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "h_13",
+          "label": "Shared Electronic Medical Record (EHR)\nCentralized clinical encounters & lab notes",
+          "x": 360,
+          "y": 560,
+          "color": "violet"
+        },
+        {
+          "id": "h_14",
+          "label": "Hospital Administration & Compliance\nRole-based access, audit logs & inventory",
+          "x": 640,
+          "y": 560,
+          "color": "violet"
+        }
+      ],
+      "arrows": [
+        {
+          "from": "h_1",
+          "to": "h_2"
+        },
+        {
+          "from": "h_2",
+          "to": "h_3"
+        },
+        {
+          "from": "h_3",
+          "to": "h_4"
+        },
+        {
+          "from": "h_4",
+          "to": "h_5"
+        },
+        {
+          "from": "h_5",
+          "to": "h_6"
+        },
+        {
+          "from": "h_6",
+          "to": "h_7"
+        },
+        {
+          "from": "h_7",
+          "to": "h_8"
+        },
+        {
+          "from": "h_8",
+          "to": "h_9"
+        },
+        {
+          "from": "h_9",
+          "to": "h_10"
+        },
+        {
+          "from": "h_10",
+          "to": "h_11"
+        },
+        {
+          "from": "h_11",
+          "to": "h_12"
+        }
+      ]
+    },
+    {
+      "id": "kb_hrms_workflow",
+      "domain": "HRMS & People Operations",
+      "title": "Human Resource Management System (HRMS) Architecture",
+      "keywords": [
+        "hrms",
+        "hr",
+        "employee",
+        "payroll",
+        "attendance",
+        "leave",
+        "hiring",
+        "recruitment",
+        "onboarding",
+        "appraisal",
+        "salary",
+        "workforce",
+        "talent"
+      ],
+      "summary": "Core HR lifecycle spanning recruitment, digital onboarding, daily attendance/leaves, payroll processing, performance management, and offboarding.",
+      "nodes": [
+        {
+          "id": "hr_1",
+          "label": "1. Job Requisition & Posting\nDepartment staffing demand & approvals",
+          "x": 80,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "hr_2",
+          "label": "2. Applicant Tracking (ATS)\nResume parsing & candidate shortlisting",
+          "x": 360,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "hr_3",
+          "label": "3. Interview & Evaluation\nTechnical scoring & background check",
+          "x": 640,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "hr_4",
+          "label": "4. Offer Letter & Acceptance\nSalary packaging & electronic signing",
+          "x": 920,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "hr_5",
+          "label": "5. Digital Onboarding\nDoc collection & role provisioning",
+          "x": 920,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "hr_6",
+          "label": "6. Employee Master Database\nSingle source of truth for employee records",
+          "x": 640,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "hr_7",
+          "label": "7. Time & Attendance\nBiometric/web clock-in, overtime tracking",
+          "x": 360,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "hr_8",
+          "label": "8. Leave Management\nLeave accrual, balance & manager sign-off",
+          "x": 80,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "hr_9",
+          "label": "9. Payroll Engine & Deductions\nTax calculation, PF, bonus & net salary",
+          "x": 80,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "hr_10",
+          "label": "10. Direct Deposit & Payslips\nAutomated bank disbursal & PDF slips",
+          "x": 360,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "hr_11",
+          "label": "11. Performance & OKRs\nQuarterly appraisal, 360 review & goals",
+          "x": 640,
+          "y": 400,
+          "color": "yellow"
+        },
+        {
+          "id": "hr_12",
+          "label": "12. Offboarding & Final Settlement\nAsset recovery, exit interview & relieving doc",
+          "x": 920,
+          "y": 400,
+          "color": "red"
+        }
+      ],
+      "arrows": [
+        {
+          "from": "hr_1",
+          "to": "hr_2"
+        },
+        {
+          "from": "hr_2",
+          "to": "hr_3"
+        },
+        {
+          "from": "hr_3",
+          "to": "hr_4"
+        },
+        {
+          "from": "hr_4",
+          "to": "hr_5"
+        },
+        {
+          "from": "hr_5",
+          "to": "hr_6"
+        },
+        {
+          "from": "hr_6",
+          "to": "hr_7"
+        },
+        {
+          "from": "hr_7",
+          "to": "hr_8"
+        },
+        {
+          "from": "hr_8",
+          "to": "hr_9"
+        },
+        {
+          "from": "hr_9",
+          "to": "hr_10"
+        },
+        {
+          "from": "hr_6",
+          "to": "hr_11"
+        },
+        {
+          "from": "hr_11",
+          "to": "hr_12"
+        }
+      ]
+    },
+    {
+      "id": "kb_ecommerce_order",
+      "domain": "E-Commerce & Retail",
+      "title": "E-Commerce Order Processing & Fulfillment Pipeline",
+      "keywords": [
+        "ecommerce",
+        "order",
+        "checkout",
+        "cart",
+        "payment",
+        "warehouse",
+        "shipping",
+        "delivery",
+        "store",
+        "refund",
+        "inventory"
+      ],
+      "summary": "Customer order journey from product browsing and shopping cart checkout through payment gateway, warehouse fulfillment, carrier shipping, and returns.",
+      "nodes": [
+        {
+          "id": "ec_1",
+          "label": "1. Product Catalog & Search\nElasticsearch index & dynamic pricing",
+          "x": 80,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ec_2",
+          "label": "2. Shopping Cart & Discounts\nPromo code validation & stock reservation",
+          "x": 360,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ec_3",
+          "label": "3. Checkout & Address\nTax calculation & shipping method selection",
+          "x": 640,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ec_4",
+          "label": "4. Payment Gateway & 3D Secure\nCredit card, UPI, or PayPal authorization",
+          "x": 920,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ec_5",
+          "label": "5. Order Confirmation & Email\nInvoice generation & customer notification",
+          "x": 920,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "ec_6",
+          "label": "6. Warehouse Pick & Pack\nBarcode scan, packing slip & QC check",
+          "x": 640,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "ec_7",
+          "label": "7. Carrier Dispatch & Tracking\nLabel printing & tracking number assigned",
+          "x": 360,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "ec_8",
+          "label": "8. Delivery & Feedback\nProof of delivery & customer review prompt",
+          "x": 80,
+          "y": 240,
+          "color": "green"
+        }
+      ],
+      "arrows": [
+        {
+          "from": "ec_1",
+          "to": "ec_2"
+        },
+        {
+          "from": "ec_2",
+          "to": "ec_3"
+        },
+        {
+          "from": "ec_3",
+          "to": "ec_4"
+        },
+        {
+          "from": "ec_4",
+          "to": "ec_5"
+        },
+        {
+          "from": "ec_5",
+          "to": "ec_6"
+        },
+        {
+          "from": "ec_6",
+          "to": "ec_7"
+        },
+        {
+          "from": "ec_7",
+          "to": "ec_8"
+        }
+      ]
+    },
+    {
+      "id": "kb_auth_security",
+      "domain": "Security & Identity",
+      "title": "Modern User Authentication & RBAC Authorization Flow",
+      "keywords": [
+        "auth",
+        "login",
+        "authentication",
+        "authorization",
+        "jwt",
+        "oauth",
+        "security",
+        "sso",
+        "mfa",
+        "token",
+        "password",
+        "rbac",
+        "user"
+      ],
+      "summary": "Enterprise identity pipeline including credential hashing, rate limiting, Multi-Factor Authentication, JWT access/refresh tokens, and Role-Based Access Control.",
+      "nodes": [
+        {
+          "id": "au_1",
+          "label": "1. User Login / Register\nClient submits credentials over TLS",
+          "x": 80,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "au_2",
+          "label": "2. Rate Limit & WAF Check\nIP throttling & brute-force defense",
+          "x": 360,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "au_3",
+          "label": "3. Credential Verification\nArgon2/Bcrypt hash verification against DB",
+          "x": 640,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "au_4",
+          "label": "4. Multi-Factor Auth (MFA)\nTOTP authenticator or SMS verification",
+          "x": 920,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "au_5",
+          "label": "5. Token Generation (JWT)\nShort-lived Access Token + HTTP-only Refresh Token",
+          "x": 920,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "au_6",
+          "label": "6. API Gateway Guard\nVerify JWT signature & claims",
+          "x": 640,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "au_7",
+          "label": "7. RBAC Permission Check\nEvaluate User Roles vs Route Permissions",
+          "x": 360,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "au_8",
+          "label": "8. Protected Service Execution\nProcess request & return sensitive payload",
+          "x": 80,
+          "y": 240,
+          "color": "green"
+        }
+      ],
+      "arrows": [
+        {
+          "from": "au_1",
+          "to": "au_2"
+        },
+        {
+          "from": "au_2",
+          "to": "au_3"
+        },
+        {
+          "from": "au_3",
+          "to": "au_4"
+        },
+        {
+          "from": "au_4",
+          "to": "au_5"
+        },
+        {
+          "from": "au_5",
+          "to": "au_6"
+        },
+        {
+          "from": "au_6",
+          "to": "au_7"
+        },
+        {
+          "from": "au_7",
+          "to": "au_8"
+        }
+      ]
+    },
+    {
+      "id": "kb_cicd_devops",
+      "domain": "DevOps & Cloud",
+      "title": "Automated CI/CD Pipeline & Cloud Deployment",
+      "keywords": [
+        "cicd",
+        "devops",
+        "pipeline",
+        "docker",
+        "deploy",
+        "kubernetes",
+        "cloud",
+        "git",
+        "test",
+        "build",
+        "release"
+      ],
+      "summary": "Automated pipeline for Git commit triggers, test suite execution, container image builds, security scans, canary releases, and health check rollbacks.",
+      "nodes": [
+        {
+          "id": "ci_1",
+          "label": "1. Code Commit & PR\nDeveloper pushes branch to GitHub/GitLab",
+          "x": 80,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ci_2",
+          "label": "2. Lint & Code Quality\nStatic analysis, ESLint & formatting gates",
+          "x": 360,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ci_3",
+          "label": "3. Automated Test Suite\nUnit tests, integration tests & code coverage",
+          "x": 640,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ci_4",
+          "label": "4. Container Build & Scan\nDocker build, vulnerability audit with Trivy",
+          "x": 920,
+          "y": 80,
+          "color": "blue"
+        },
+        {
+          "id": "ci_5",
+          "label": "5. Staging Environment\nAutomated deployment to preview cluster",
+          "x": 920,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "ci_6",
+          "label": "6. E2E & Smoke Testing\nCypress / Playwright regression tests",
+          "x": 640,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "ci_7",
+          "label": "7. Canary Production Deploy\n10% traffic routing & metrics evaluation",
+          "x": 360,
+          "y": 240,
+          "color": "green"
+        },
+        {
+          "id": "ci_8",
+          "label": "8. Full Production & Monitoring\n100% traffic, Prometheus alerts & logs",
+          "x": 80,
+          "y": 240,
+          "color": "green"
+        }
+      ],
+      "arrows": [
+        {
+          "from": "ci_1",
+          "to": "ci_2"
+        },
+        {
+          "from": "ci_2",
+          "to": "ci_3"
+        },
+        {
+          "from": "ci_3",
+          "to": "ci_4"
+        },
+        {
+          "from": "ci_4",
+          "to": "ci_5"
+        },
+        {
+          "from": "ci_5",
+          "to": "ci_6"
+        },
+        {
+          "from": "ci_6",
+          "to": "ci_7"
+        },
+        {
+          "from": "ci_7",
+          "to": "ci_8"
+        }
+      ]
+    }
+  ],
+  "history": []
+}

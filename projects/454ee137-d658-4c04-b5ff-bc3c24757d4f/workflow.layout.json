@@ -1,0 +1,513 @@
+{
+  "id": "workflow",
+  "layoutOptions": {
+    "elk.algorithm": "layered",
+    "elk.direction": "DOWN",
+    "elk.edgeRouting": "ORTHOGONAL",
+    "elk.layered.spacing.nodeNodeBetweenLayers": "130",
+    "elk.spacing.nodeNode": "100",
+    "elk.padding": "[top=40,left=40,bottom=40,right=40]"
+  },
+  "children": [
+    {
+      "id": "hiring",
+      "width": 550,
+      "height": 212,
+      "$H": 482,
+      "x": 893.5,
+      "y": 278,
+      "children": [
+        {
+          "id": "requisition",
+          "width": 138,
+          "height": 108,
+          "$H": 277,
+          "x": 26,
+          "y": 62
+        },
+        {
+          "id": "candidate",
+          "width": 138,
+          "height": 108,
+          "$H": 279,
+          "x": 206,
+          "y": 62
+        },
+        {
+          "id": "offer",
+          "width": 138,
+          "height": 108,
+          "$H": 281,
+          "x": 386,
+          "y": 62
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "width": 550,
+      "height": 212,
+      "$H": 484,
+      "x": 838.5,
+      "y": 620,
+      "children": [
+        {
+          "id": "documents",
+          "width": 138,
+          "height": 108,
+          "$H": 348,
+          "x": 26,
+          "y": 62
+        },
+        {
+          "id": "provision",
+          "width": 138,
+          "height": 108,
+          "$H": 350,
+          "x": 206,
+          "y": 62
+        },
+        {
+          "id": "master",
+          "width": 138,
+          "height": 108,
+          "$H": 352,
+          "x": 386,
+          "y": 62
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "width": 550,
+      "height": 212,
+      "$H": 486,
+      "x": 1031,
+      "y": 962,
+      "children": [
+        {
+          "id": "capture",
+          "width": 138,
+          "height": 108,
+          "$H": 373,
+          "x": 26,
+          "y": 62
+        },
+        {
+          "id": "reconcile",
+          "width": 138,
+          "height": 108,
+          "$H": 375,
+          "x": 206,
+          "y": 62
+        },
+        {
+          "id": "approve_time",
+          "width": 138,
+          "height": 108,
+          "$H": 377,
+          "x": 386,
+          "y": 62
+        }
+      ]
+    },
+    {
+      "id": "pay",
+      "width": 730,
+      "height": 212,
+      "$H": 488,
+      "x": 764.3333333333333,
+      "y": 1304,
+      "children": [
+        {
+          "id": "calculate",
+          "width": 138,
+          "height": 108,
+          "$H": 398,
+          "x": 26,
+          "y": 62
+        },
+        {
+          "id": "authorize",
+          "width": 138,
+          "height": 108,
+          "$H": 400,
+          "x": 206,
+          "y": 62
+        },
+        {
+          "id": "bank",
+          "width": 138,
+          "height": 108,
+          "$H": 402,
+          "x": 386,
+          "y": 62
+        },
+        {
+          "id": "payslip",
+          "width": 138,
+          "height": 108,
+          "$H": 404,
+          "x": 566,
+          "y": 62
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "width": 550,
+      "height": 212,
+      "$H": 490,
+      "x": 40,
+      "y": 1304,
+      "children": [
+        {
+          "id": "review",
+          "width": 138,
+          "height": 108,
+          "$H": 432,
+          "x": 26,
+          "y": 62
+        },
+        {
+          "id": "train",
+          "width": 138,
+          "height": 108,
+          "$H": 434,
+          "x": 206,
+          "y": 62
+        },
+        {
+          "id": "knowledge",
+          "width": 138,
+          "height": 108,
+          "$H": 436,
+          "x": 386,
+          "y": 62
+        }
+      ]
+    },
+    {
+      "id": "exit",
+      "width": 550,
+      "height": 212,
+      "$H": 492,
+      "x": 380.99999999999994,
+      "y": 962,
+      "children": [
+        {
+          "id": "request_exit",
+          "width": 138,
+          "height": 108,
+          "$H": 457,
+          "x": 26,
+          "y": 62
+        },
+        {
+          "id": "clearance",
+          "width": 138,
+          "height": 108,
+          "$H": 459,
+          "x": 206,
+          "y": 62
+        },
+        {
+          "id": "settle",
+          "width": 138,
+          "height": 108,
+          "$H": 461,
+          "x": 386,
+          "y": 62
+        }
+      ]
+    },
+    {
+      "id": "hr",
+      "width": 138,
+      "height": 108,
+      "$H": 494,
+      "x": 1044.5,
+      "y": 40
+    },
+    {
+      "id": "employee",
+      "width": 138,
+      "height": 108,
+      "$H": 496,
+      "x": 1092.3333333333333,
+      "y": 1646
+    }
+  ],
+  "edges": [
+    {
+      "id": "layout-0",
+      "sources": [
+        "hr"
+      ],
+      "targets": [
+        "hiring"
+      ],
+      "sections": [
+        {
+          "id": "layout-0_s0",
+          "startPoint": {
+            "x": 1113.5,
+            "y": 148
+          },
+          "endPoint": {
+            "x": 1113.5,
+            "y": 278
+          },
+          "incomingShape": "hr",
+          "outgoingShape": "hiring"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-1",
+      "sources": [
+        "hiring"
+      ],
+      "targets": [
+        "people"
+      ],
+      "sections": [
+        {
+          "id": "layout-1_s0",
+          "startPoint": {
+            "x": 1113.5,
+            "y": 490
+          },
+          "endPoint": {
+            "x": 1113.5,
+            "y": 620
+          },
+          "incomingShape": "hiring",
+          "outgoingShape": "people"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-2",
+      "sources": [
+        "people"
+      ],
+      "targets": [
+        "time"
+      ],
+      "sections": [
+        {
+          "id": "layout-2_s0",
+          "startPoint": {
+            "x": 1251,
+            "y": 832
+          },
+          "endPoint": {
+            "x": 1251,
+            "y": 962
+          },
+          "incomingShape": "people",
+          "outgoingShape": "time"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-3",
+      "sources": [
+        "time"
+      ],
+      "targets": [
+        "pay"
+      ],
+      "sections": [
+        {
+          "id": "layout-3_s0",
+          "startPoint": {
+            "x": 1251,
+            "y": 1174
+          },
+          "endPoint": {
+            "x": 1251,
+            "y": 1304
+          },
+          "incomingShape": "time",
+          "outgoingShape": "pay"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-4",
+      "sources": [
+        "people"
+      ],
+      "targets": [
+        "learning"
+      ],
+      "sections": [
+        {
+          "id": "layout-4_s0",
+          "startPoint": {
+            "x": 976,
+            "y": 832
+          },
+          "endPoint": {
+            "x": 315,
+            "y": 1304
+          },
+          "bendPoints": [
+            {
+              "x": 976,
+              "y": 842
+            },
+            {
+              "x": 315,
+              "y": 842
+            }
+          ],
+          "incomingShape": "people",
+          "outgoingShape": "learning"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-5",
+      "sources": [
+        "people"
+      ],
+      "targets": [
+        "exit"
+      ],
+      "sections": [
+        {
+          "id": "layout-5_s0",
+          "startPoint": {
+            "x": 1113.5,
+            "y": 832
+          },
+          "endPoint": {
+            "x": 601,
+            "y": 962
+          },
+          "bendPoints": [
+            {
+              "x": 1113.5,
+              "y": 852
+            },
+            {
+              "x": 601,
+              "y": 852
+            }
+          ],
+          "incomingShape": "people",
+          "outgoingShape": "exit"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-6",
+      "sources": [
+        "exit"
+      ],
+      "targets": [
+        "pay"
+      ],
+      "sections": [
+        {
+          "id": "layout-6_s0",
+          "startPoint": {
+            "x": 601,
+            "y": 1174
+          },
+          "endPoint": {
+            "x": 1007.6666666666666,
+            "y": 1304
+          },
+          "bendPoints": [
+            {
+              "x": 601,
+              "y": 1184
+            },
+            {
+              "x": 1007.6666666666666,
+              "y": 1184
+            }
+          ],
+          "incomingShape": "exit",
+          "outgoingShape": "pay"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-7",
+      "sources": [
+        "pay"
+      ],
+      "targets": [
+        "employee"
+      ],
+      "sections": [
+        {
+          "id": "layout-7_s0",
+          "startPoint": {
+            "x": 1129.3333333333333,
+            "y": 1516
+          },
+          "endPoint": {
+            "x": 1129.3333333333333,
+            "y": 1646
+          },
+          "incomingShape": "pay",
+          "outgoingShape": "employee"
+        }
+      ],
+      "container": "workflow"
+    },
+    {
+      "id": "layout-8",
+      "sources": [
+        "learning"
+      ],
+      "targets": [
+        "employee"
+      ],
+      "sections": [
+        {
+          "id": "layout-8_s0",
+          "startPoint": {
+            "x": 315,
+            "y": 1516
+          },
+          "endPoint": {
+            "x": 1083.3333333333333,
+            "y": 1646
+          },
+          "bendPoints": [
+            {
+              "x": 315,
+              "y": 1526
+            },
+            {
+              "x": 1083.3333333333333,
+              "y": 1526
+            }
+          ],
+          "incomingShape": "learning",
+          "outgoingShape": "employee"
+        }
+      ],
+      "container": "workflow"
+    }
+  ],
+  "$H": 480,
+  "x": 0,
+  "y": 0,
+  "width": 1566,
+  "height": 1794
+}

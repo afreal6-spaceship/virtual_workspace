@@ -1,0 +1,87 @@
+{
+  "version": 3,
+  "title": "Automated Cloud CI/CD Pipeline & Production Deployment Workflow",
+  "actors": [],
+  "modules": [
+    {
+      "id": "devops_module_0",
+      "title": "Git Push / Pull Request",
+      "steps": [
+        {
+          "id": "d_1",
+          "label": "Git Push / Pull Request",
+          "icon": "clipboard-list",
+          "description": "Developer triggers webhook on main branch"
+        },
+        {
+          "id": "d_2",
+          "label": "Static Analysis & Linting",
+          "icon": "settings",
+          "description": "Run ESLint, Flake8, SonarQube & secret scanners"
+        },
+        {
+          "id": "d_3",
+          "label": "Automated Test Suite",
+          "icon": "circle-check",
+          "description": "Execute unit, integration & mocked API contracts"
+        }
+      ]
+    },
+    {
+      "id": "devops_module_1",
+      "title": "Container Image Build",
+      "steps": [
+        {
+          "id": "d_4",
+          "label": "Container Image Build",
+          "icon": "clipboard-list",
+          "description": "Multi-stage Dockerfile, vulnerability scan (Trivy)"
+        },
+        {
+          "id": "d_5",
+          "label": "Publish to Container Registry",
+          "icon": "settings",
+          "description": "Tag SHA & push to Google Artifact Registry / ECR"
+        },
+        {
+          "id": "d_6",
+          "label": "Staging Environment Deployment",
+          "icon": "circle-check",
+          "description": "Helm upgrade & automated smoke testing"
+        }
+      ]
+    },
+    {
+      "id": "devops_module_2",
+      "title": "Canary Production Rollout",
+      "steps": [
+        {
+          "id": "d_7",
+          "label": "Canary Production Rollout",
+          "icon": "clipboard-list",
+          "description": "Direct 10% traffic, monitor error rates & latency"
+        },
+        {
+          "id": "d_8",
+          "label": "Full Promotion & Monitoring",
+          "icon": "settings",
+          "description": "100% rollout, Datadog alerts & Prometheus metrics"
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "from": "d_3",
+      "to": "d_4",
+      "type": "main",
+      "label": "Validated handoff"
+    },
+    {
+      "from": "d_6",
+      "to": "d_7",
+      "type": "main",
+      "label": "Validated handoff"
+    }
+  ]
+}

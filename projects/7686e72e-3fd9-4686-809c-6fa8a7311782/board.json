@@ -1,0 +1,91 @@
+{
+  "title": "Automated Cloud CI/CD Pipeline & Production Deployment Workflow",
+  "nodes": [
+    {
+      "id": "d_1",
+      "label": "1. Git Push / Pull Request\nDeveloper triggers webhook on main branch",
+      "x": 80,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "d_2",
+      "label": "2. Static Analysis & Linting\nRun ESLint, Flake8, SonarQube & secret scanners",
+      "x": 360,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "d_3",
+      "label": "3. Automated Test Suite\nExecute unit, integration & mocked API contracts",
+      "x": 640,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "d_4",
+      "label": "4. Container Image Build\nMulti-stage Dockerfile, vulnerability scan (Trivy)",
+      "x": 920,
+      "y": 80,
+      "color": "green"
+    },
+    {
+      "id": "d_5",
+      "label": "5. Publish to Container Registry\nTag SHA & push to Google Artifact Registry / ECR",
+      "x": 920,
+      "y": 240,
+      "color": "green"
+    },
+    {
+      "id": "d_6",
+      "label": "6. Staging Environment Deployment\nHelm upgrade & automated smoke testing",
+      "x": 640,
+      "y": 240,
+      "color": "green"
+    },
+    {
+      "id": "d_7",
+      "label": "7. Canary Production Rollout\nDirect 10% traffic, monitor error rates & latency",
+      "x": 360,
+      "y": 240,
+      "color": "yellow"
+    },
+    {
+      "id": "d_8",
+      "label": "8. Full Promotion & Monitoring\n100% rollout, Datadog alerts & Prometheus metrics",
+      "x": 80,
+      "y": 240,
+      "color": "violet"
+    }
+  ],
+  "arrows": [
+    {
+      "from": "d_1",
+      "to": "d_2"
+    },
+    {
+      "from": "d_2",
+      "to": "d_3"
+    },
+    {
+      "from": "d_3",
+      "to": "d_4"
+    },
+    {
+      "from": "d_4",
+      "to": "d_5"
+    },
+    {
+      "from": "d_5",
+      "to": "d_6"
+    },
+    {
+      "from": "d_6",
+      "to": "d_7"
+    },
+    {
+      "from": "d_7",
+      "to": "d_8"
+    }
+  ]
+}

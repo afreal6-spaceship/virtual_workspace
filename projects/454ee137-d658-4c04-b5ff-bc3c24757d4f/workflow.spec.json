@@ -1,0 +1,229 @@
+{
+  "version": 3,
+  "title": "HRMS project workflow",
+  "actors": [
+    {
+      "id": "hr",
+      "label": "HR team",
+      "icon": "users"
+    },
+    {
+      "id": "employee",
+      "label": "Employee",
+      "icon": "user"
+    }
+  ],
+  "modules": [
+    {
+      "id": "hiring",
+      "title": "Recruitment",
+      "steps": [
+        {
+          "id": "requisition",
+          "label": "Approve role",
+          "icon": "clipboard-list"
+        },
+        {
+          "id": "candidate",
+          "label": "Assess candidates",
+          "icon": "search"
+        },
+        {
+          "id": "offer",
+          "label": "Accept offer",
+          "icon": "handshake"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "Employee onboarding",
+      "steps": [
+        {
+          "id": "documents",
+          "label": "Verify documents",
+          "icon": "file-check"
+        },
+        {
+          "id": "provision",
+          "label": "Provision access",
+          "icon": "rocket"
+        },
+        {
+          "id": "master",
+          "label": "Employee record",
+          "icon": "database"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "title": "Time & attendance",
+      "steps": [
+        {
+          "id": "capture",
+          "label": "Capture time",
+          "icon": "clock"
+        },
+        {
+          "id": "reconcile",
+          "label": "Reconcile leave",
+          "icon": "calendar-days"
+        },
+        {
+          "id": "approve_time",
+          "label": "Approve period",
+          "icon": "circle-check"
+        }
+      ]
+    },
+    {
+      "id": "pay",
+      "title": "Payroll & delivery",
+      "steps": [
+        {
+          "id": "calculate",
+          "label": "Calculate payroll",
+          "icon": "calculator"
+        },
+        {
+          "id": "authorize",
+          "label": "Approve payroll",
+          "icon": "shield-check"
+        },
+        {
+          "id": "bank",
+          "label": "Release payment",
+          "icon": "landmark"
+        },
+        {
+          "id": "payslip",
+          "label": "Publish payslip",
+          "icon": "receipt"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "Training & knowledge",
+      "steps": [
+        {
+          "id": "review",
+          "label": "Review skills",
+          "icon": "target"
+        },
+        {
+          "id": "train",
+          "label": "Complete training",
+          "icon": "graduation-cap"
+        },
+        {
+          "id": "knowledge",
+          "label": "Publish guides",
+          "icon": "book-open"
+        }
+      ]
+    },
+    {
+      "id": "exit",
+      "title": "Separation",
+      "steps": [
+        {
+          "id": "request_exit",
+          "label": "Approve exit",
+          "icon": "log-out"
+        },
+        {
+          "id": "clearance",
+          "label": "Clear assets",
+          "icon": "package-check"
+        },
+        {
+          "id": "settle",
+          "label": "Final settlement",
+          "icon": "briefcase-business"
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "from": "hr",
+      "to": "requisition",
+      "type": "main",
+      "label": "Approved headcount"
+    },
+    {
+      "from": "offer",
+      "to": "documents",
+      "type": "main",
+      "label": "Accepted candidate"
+    },
+    {
+      "from": "master",
+      "to": "capture",
+      "type": "main",
+      "label": "Employee & schedule"
+    },
+    {
+      "from": "approve_time",
+      "to": "calculate",
+      "type": "main",
+      "label": "Approved payable days"
+    },
+    {
+      "from": "master",
+      "to": "review",
+      "type": "main",
+      "label": "Role & objectives"
+    },
+    {
+      "from": "master",
+      "to": "request_exit",
+      "type": "main",
+      "label": "Authorized separation"
+    },
+    {
+      "from": "settle",
+      "to": "calculate",
+      "type": "main",
+      "label": "Final payment draft"
+    },
+    {
+      "from": "payslip",
+      "to": "employee",
+      "type": "output",
+      "label": "Payslip available"
+    },
+    {
+      "from": "knowledge",
+      "to": "employee",
+      "type": "output",
+      "label": "Published policies"
+    },
+    {
+      "from": "knowledge",
+      "to": "review",
+      "type": "feedback",
+      "label": "Learning outcomes"
+    },
+    {
+      "from": "authorize",
+      "to": "calculate",
+      "type": "feedback",
+      "label": "Corrections required"
+    },
+    {
+      "from": "bank",
+      "to": "authorize",
+      "type": "feedback",
+      "label": "Reconcile failed payment"
+    },
+    {
+      "from": "approve_time",
+      "to": "capture",
+      "type": "feedback",
+      "label": "Resolve time exceptions"
+    }
+  ]
+}

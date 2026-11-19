@@ -1,0 +1,170 @@
+{
+  "title": "HRMS (Human Resource Management System) Architecture Flowchart",
+  "nodes": [
+    {
+      "id": "hrms_1",
+      "label": "1. Job Requisition & Posting\n(Hiring Manager & HR)",
+      "x": 80,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "hrms_2",
+      "label": "2. Applicant Tracking & Sourcing\n(Portal & Referrals)",
+      "x": 360,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "hrms_3",
+      "label": "3. Interview & Technical Screening\n(Panel Assessment)",
+      "x": 640,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "hrms_4",
+      "label": "4. Offer Management & BG Check\n(Candidate Acceptance)",
+      "x": 920,
+      "y": 80,
+      "color": "blue"
+    },
+    {
+      "id": "hrms_5",
+      "label": "5. Digital Onboarding\n(Document Upload & ID Creation)",
+      "x": 920,
+      "y": 240,
+      "color": "green"
+    },
+    {
+      "id": "hrms_6",
+      "label": "6. Employee Master Database\n(Profile, Department, Roles)",
+      "x": 640,
+      "y": 240,
+      "color": "green"
+    },
+    {
+      "id": "hrms_7",
+      "label": "7. Time & Attendance System\n(Biometric / Geo-fencing)",
+      "x": 360,
+      "y": 240,
+      "color": "green"
+    },
+    {
+      "id": "hrms_8",
+      "label": "8. Leave & Shift Management\n(Accrual & Manager Approval)",
+      "x": 80,
+      "y": 240,
+      "color": "green"
+    },
+    {
+      "id": "hrms_9",
+      "label": "9. Payroll & Tax Processing\n(Salary, Deductions, Bonus)",
+      "x": 80,
+      "y": 400,
+      "color": "yellow"
+    },
+    {
+      "id": "hrms_10",
+      "label": "10. Direct Deposit & Payslips\n(Banking API & Self-Service)",
+      "x": 360,
+      "y": 400,
+      "color": "yellow"
+    },
+    {
+      "id": "hrms_11",
+      "label": "11. Performance & KPI Reviews\n(OKRs, 360 Feedback, Goals)",
+      "x": 640,
+      "y": 400,
+      "color": "yellow"
+    },
+    {
+      "id": "hrms_12",
+      "label": "12. Training & L&D Management\n(Courses & Certifications)",
+      "x": 920,
+      "y": 400,
+      "color": "yellow"
+    },
+    {
+      "id": "hrms_13",
+      "label": "13. Separation & Offboarding\n(Resignation, Exit Interview, Assets)",
+      "x": 920,
+      "y": 560,
+      "color": "red"
+    },
+    {
+      "id": "hrms_14",
+      "label": "14. Full & Final Settlement (FnF)\n(Gratuity, PF, Relieving Letter)",
+      "x": 640,
+      "y": 560,
+      "color": "red"
+    }
+  ],
+  "arrows": [
+    {
+      "from": "hrms_1",
+      "to": "hrms_2",
+      "label": "Applications"
+    },
+    {
+      "from": "hrms_2",
+      "to": "hrms_3",
+      "label": "Shortlisted"
+    },
+    {
+      "from": "hrms_3",
+      "to": "hrms_4",
+      "label": "Recommended"
+    },
+    {
+      "from": "hrms_4",
+      "to": "hrms_5",
+      "label": "Accepted"
+    },
+    {
+      "from": "hrms_5",
+      "to": "hrms_6",
+      "label": "Records Stored"
+    },
+    {
+      "from": "hrms_6",
+      "to": "hrms_7",
+      "label": "Track Daily"
+    },
+    {
+      "from": "hrms_7",
+      "to": "hrms_8",
+      "label": "Leave Balances"
+    },
+    {
+      "from": "hrms_8",
+      "to": "hrms_9",
+      "label": "Monthly Cutoff"
+    },
+    {
+      "from": "hrms_9",
+      "to": "hrms_10",
+      "label": "Disbursed"
+    },
+    {
+      "from": "hrms_6",
+      "to": "hrms_11",
+      "label": "Quarterly Appraisal"
+    },
+    {
+      "from": "hrms_11",
+      "to": "hrms_12",
+      "label": "Skill Gaps"
+    },
+    {
+      "from": "hrms_11",
+      "to": "hrms_13",
+      "label": "Exit / Retirement"
+    },
+    {
+      "from": "hrms_13",
+      "to": "hrms_14",
+      "label": "Clearance Completed"
+    }
+  ]
+}

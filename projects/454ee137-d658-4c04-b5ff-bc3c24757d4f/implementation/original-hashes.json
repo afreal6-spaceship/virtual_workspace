@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "0929d0d0d7da5140d2070d0624a7b6f2783e9d3c721f817e7a8d019bba3fbbdd",
+  "frontend/package.json": "d11dea944c95e5792f1403bd5145acd3d2105f3ace4a51e652c038156db0e791",
+  "frontend/package-lock.json": "0f81793f09171f56cb963d9020976a419aba2f679c29cf88958ea764dfd11322",
+  "backend/main.py": "3606b0e59af034cafb9474cc6a4a91adf96385231fb8ed9b2f264883d3cc8a09"
+}

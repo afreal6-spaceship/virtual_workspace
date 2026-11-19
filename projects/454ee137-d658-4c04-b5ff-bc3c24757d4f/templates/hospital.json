@@ -1,0 +1,147 @@
+{
+  "version": 3,
+  "title": "Hospital Management & Patient Journey Clinical Workflow",
+  "actors": [],
+  "modules": [
+    {
+      "id": "hospital_module_0",
+      "title": "Patient Registration",
+      "steps": [
+        {
+          "id": "h_1",
+          "label": "Patient Registration",
+          "icon": "clipboard-list",
+          "description": "Create patient ID & demographic record"
+        },
+        {
+          "id": "h_2",
+          "label": "Appointment / Walk-in",
+          "icon": "settings",
+          "description": "Schedule visit; emergencies directly to triage"
+        },
+        {
+          "id": "h_3",
+          "label": "Triage & Assessment",
+          "icon": "circle-check",
+          "description": "Record vitals, urgency, and allergies"
+        }
+      ]
+    },
+    {
+      "id": "hospital_module_1",
+      "title": "Doctor Consultation",
+      "steps": [
+        {
+          "id": "h_4",
+          "label": "Doctor Consultation",
+          "icon": "clipboard-list",
+          "description": "Review history, diagnose, create care plan"
+        },
+        {
+          "id": "h_5",
+          "label": "Laboratory & Imaging",
+          "icon": "settings",
+          "description": "Order sample, run scan & validate results"
+        },
+        {
+          "id": "h_6",
+          "label": "Outpatient Treatment",
+          "icon": "circle-check",
+          "description": "Prescription, minor procedures, patient instructions"
+        }
+      ]
+    },
+    {
+      "id": "hospital_module_2",
+      "title": "Inpatient Admission",
+      "steps": [
+        {
+          "id": "h_7",
+          "label": "Inpatient Admission",
+          "icon": "clipboard-list",
+          "description": "Allocate ward / bed; assign care team"
+        },
+        {
+          "id": "h_8",
+          "label": "Inpatient Care & Surgery",
+          "icon": "settings",
+          "description": "Nursing, medication administration, OT rounds"
+        },
+        {
+          "id": "h_9",
+          "label": "Pharmacy Dispensing",
+          "icon": "circle-check",
+          "description": "Validate prescription, dispense meds, update stock"
+        }
+      ]
+    },
+    {
+      "id": "hospital_module_3",
+      "title": "Discharge Planning",
+      "steps": [
+        {
+          "id": "h_10",
+          "label": "Discharge Planning",
+          "icon": "clipboard-list",
+          "description": "Clinical clearance, summary, medication reconciliation"
+        },
+        {
+          "id": "h_11",
+          "label": "Billing & Insurance",
+          "icon": "settings",
+          "description": "Capture charges, verify coverage, submit claims"
+        },
+        {
+          "id": "h_12",
+          "label": "Payments & Reconciliation",
+          "icon": "circle-check",
+          "description": "Collect patient balance, track insurer payments"
+        }
+      ]
+    },
+    {
+      "id": "hospital_module_4",
+      "title": "Follow-up Care",
+      "steps": [
+        {
+          "id": "h_13",
+          "label": "Follow-up Care",
+          "icon": "clipboard-list",
+          "description": "Book review visit, send reminders, monitor recovery"
+        },
+        {
+          "id": "h_14",
+          "label": "Shared EHR & Audits",
+          "icon": "settings",
+          "description": "Central clinical record, encounter history & reports"
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "from": "h_3",
+      "to": "h_4",
+      "type": "main",
+      "label": "Validated handoff"
+    },
+    {
+      "from": "h_6",
+      "to": "h_7",
+      "type": "main",
+      "label": "Validated handoff"
+    },
+    {
+      "from": "h_9",
+      "to": "h_10",
+      "type": "main",
+      "label": "Validated handoff"
+    },
+    {
+      "from": "h_12",
+      "to": "h_13",
+      "type": "main",
+      "label": "Validated handoff"
+    }
+  ]
+}

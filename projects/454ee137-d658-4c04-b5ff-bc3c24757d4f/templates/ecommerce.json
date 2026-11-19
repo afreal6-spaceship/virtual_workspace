@@ -1,0 +1,87 @@
+{
+  "version": 3,
+  "title": "E-Commerce Order Fulfillment & Supply Chain Architecture",
+  "actors": [],
+  "modules": [
+    {
+      "id": "ecommerce_module_0",
+      "title": "Product Discovery & Cart",
+      "steps": [
+        {
+          "id": "e_1",
+          "label": "Product Discovery & Cart",
+          "icon": "clipboard-list",
+          "description": "User browses catalog & adds items to basket"
+        },
+        {
+          "id": "e_2",
+          "label": "Checkout & Address Validation",
+          "icon": "settings",
+          "description": "Verify stock allocation & calculate taxes"
+        },
+        {
+          "id": "e_3",
+          "label": "Payment Gateway Authorization",
+          "icon": "circle-check",
+          "description": "Credit card, UPI, or PayPal transaction capture"
+        }
+      ]
+    },
+    {
+      "id": "ecommerce_module_1",
+      "title": "Order Service & Inventory Lock",
+      "steps": [
+        {
+          "id": "e_4",
+          "label": "Order Service & Inventory Lock",
+          "icon": "clipboard-list",
+          "description": "Reserve inventory units & emit order.created event"
+        },
+        {
+          "id": "e_5",
+          "label": "Warehouse Pick & Pack",
+          "icon": "settings",
+          "description": "Generate pick-list, pack parcel & barcode label"
+        },
+        {
+          "id": "e_6",
+          "label": "Carrier Dispatch & Tracking",
+          "icon": "circle-check",
+          "description": "Handover to 3PL logistics with tracking URL"
+        }
+      ]
+    },
+    {
+      "id": "ecommerce_module_2",
+      "title": "Last-mile Customer Delivery",
+      "steps": [
+        {
+          "id": "e_7",
+          "label": "Last-mile Customer Delivery",
+          "icon": "clipboard-list",
+          "description": "Delivery confirmation SMS & invoice email"
+        },
+        {
+          "id": "e_8",
+          "label": "Returns & RMA Processing",
+          "icon": "settings",
+          "description": "Reverse pickup, condition audit & automated refund"
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "from": "e_3",
+      "to": "e_4",
+      "type": "main",
+      "label": "Validated handoff"
+    },
+    {
+      "from": "e_6",
+      "to": "e_7",
+      "type": "main",
+      "label": "Validated handoff"
+    }
+  ]
+}

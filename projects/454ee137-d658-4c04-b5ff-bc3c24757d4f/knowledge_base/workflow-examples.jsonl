@@ -1,0 +1,5 @@
+{"request":"generate HRMS project workflow","blueprint":"hrms","expected":"Grouped icon modules, explicit data transfers, animated simulation preview"}
+{"request":"make HRMS workflow with training and knowledge base","blueprint":"hrms","expected":"Performance to learning, completion feedback, reviewed guides to knowledge base and employee portal"}
+{"request":"create employee onboarding and payroll workflow","blueprint":"hrms","expected":"Employee master, approved time, payroll review, bank reconciliation and payslips"}
+{"request":"show live employee payroll transactions","expected":"Require a real authenticated event source; do not present animation as real telemetry"}
+{"request":"create thread processing workflow","blueprint":"generic","expected":"The substring hr in thread must not select HRMS"}
