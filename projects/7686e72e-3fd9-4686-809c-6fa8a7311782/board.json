@@ -1,91 +1,391 @@
 {
-  "title": "Automated Cloud CI/CD Pipeline & Production Deployment Workflow",
+  "title": "Enterprise MLOps Production System Architecture",
+  "groups": [
+    {
+      "id": "grp_datasources",
+      "title": "Data Sources",
+      "x": 30,
+      "y": 20,
+      "w": 480,
+      "h": 130,
+      "color": "violet",
+      "category": "Ingress"
+    },
+    {
+      "id": "grp_deployment",
+      "title": "Model Deployment",
+      "x": 30,
+      "y": 180,
+      "w": 220,
+      "h": 340,
+      "color": "cyan",
+      "category": "CD / Runtime"
+    },
+    {
+      "id": "grp_serve",
+      "title": "Serve",
+      "x": 340,
+      "y": 190,
+      "w": 160,
+      "h": 130,
+      "color": "orange",
+      "category": "Inference"
+    },
+    {
+      "id": "grp_consume",
+      "title": "Consume",
+      "x": 540,
+      "y": 190,
+      "w": 320,
+      "h": 130,
+      "color": "blue",
+      "category": "Client Facing"
+    },
+    {
+      "id": "grp_modeldev",
+      "title": "Model Development",
+      "x": 280,
+      "y": 400,
+      "w": 520,
+      "h": 150,
+      "color": "red",
+      "category": "Training & Eval"
+    },
+    {
+      "id": "grp_features",
+      "title": "Feature Engineering",
+      "x": 30,
+      "y": 560,
+      "w": 200,
+      "h": 260,
+      "color": "yellow",
+      "category": "Feature Store"
+    },
+    {
+      "id": "grp_datapipeline",
+      "title": "Data Pipeline",
+      "x": 400,
+      "y": 690,
+      "w": 520,
+      "h": 150,
+      "color": "green",
+      "category": "ETL Processing"
+    }
+  ],
   "nodes": [
     {
-      "id": "d_1",
-      "label": "1. Git Push / Pull Request\nDeveloper triggers webhook on main branch",
-      "x": 80,
-      "y": 80,
-      "color": "blue"
+      "id": "ds_1",
+      "label": "Structured\n(SQL DB / Warehouse)",
+      "x": 50,
+      "y": 55,
+      "color": "violet",
+      "icon": "database",
+      "category": "Data Source"
     },
     {
-      "id": "d_2",
-      "label": "2. Static Analysis & Linting\nRun ESLint, Flake8, SonarQube & secret scanners",
+      "id": "ds_2",
+      "label": "Semi-Structured\n(JSON, XML, CSV)",
+      "x": 200,
+      "y": 55,
+      "color": "orange",
+      "icon": "code",
+      "category": "Data Source"
+    },
+    {
+      "id": "ds_3",
+      "label": "Unstructured\n(Audio, Text, Media)",
+      "x": 350,
+      "y": 55,
+      "color": "blue",
+      "icon": "mail",
+      "category": "Data Source"
+    },
+    {
+      "id": "ext_batch",
+      "label": "Batch Ingestion\n(Kafka Streams)",
+      "x": 40,
+      "y": 880,
+      "color": "green",
+      "icon": "pipeline",
+      "category": "Ingestion"
+    },
+    {
+      "id": "ext_lake",
+      "label": "Data Lake\n(Delta Lake / Object Storage)",
+      "x": 260,
+      "y": 880,
+      "color": "cyan",
+      "icon": "datalake",
+      "category": "Storage"
+    },
+    {
+      "id": "dp_1",
+      "label": "Validate\n(Schema & Null Checks)",
+      "x": 420,
+      "y": 730,
+      "color": "green",
+      "icon": "check",
+      "category": "Pipeline"
+    },
+    {
+      "id": "dp_2",
+      "label": "Clean\n(Outliers & Imputation)",
+      "x": 550,
+      "y": 730,
+      "color": "cyan",
+      "icon": "clean",
+      "category": "Pipeline"
+    },
+    {
+      "id": "dp_3",
+      "label": "Standardise\n(Normalization)",
+      "x": 680,
+      "y": 730,
+      "color": "violet",
+      "icon": "standardise",
+      "category": "Pipeline"
+    },
+    {
+      "id": "dp_4",
+      "label": "Curate\n(Gold Tables)",
+      "x": 810,
+      "y": 730,
+      "color": "yellow",
+      "icon": "file",
+      "category": "Pipeline"
+    },
+    {
+      "id": "fe_1",
+      "label": "Select Features\n(Importance & Ranking)",
+      "x": 50,
+      "y": 600,
+      "color": "yellow",
+      "icon": "features",
+      "category": "Feature Engineering"
+    },
+    {
+      "id": "fe_2",
+      "label": "Extract Features\n(Vector Embeddings)",
+      "x": 50,
+      "y": 710,
+      "color": "orange",
+      "icon": "features",
+      "category": "Feature Engineering"
+    },
+    {
+      "id": "md_1",
+      "label": "Code\n(Notebooks & Git)",
+      "x": 300,
+      "y": 440,
+      "color": "orange",
+      "icon": "git",
+      "category": "Model"
+    },
+    {
+      "id": "md_2",
+      "label": "Train\n(Distributed GPU Cluster)",
+      "x": 430,
+      "y": 440,
+      "color": "red",
+      "icon": "brain",
+      "category": "Model"
+    },
+    {
+      "id": "md_3",
+      "label": "Validate\n(Hyperparameters)",
+      "x": 560,
+      "y": 440,
+      "color": "green",
+      "icon": "check",
+      "category": "Model"
+    },
+    {
+      "id": "md_4",
+      "label": "Evaluate\n(F1 & ROC-AUC)",
+      "x": 690,
+      "y": 440,
+      "color": "yellow",
+      "icon": "flask",
+      "category": "Model"
+    },
+    {
+      "id": "dep_1",
+      "label": "Deploy\n(Canary / Blue-Green)",
+      "x": 50,
+      "y": 220,
+      "color": "cyan",
+      "icon": "rocket",
+      "category": "Deployment"
+    },
+    {
+      "id": "dep_2",
+      "label": "Containerise\n(Docker & OCI Images)",
+      "x": 50,
+      "y": 315,
+      "color": "blue",
+      "icon": "container",
+      "category": "Deployment"
+    },
+    {
+      "id": "dep_3",
+      "label": "Package\n(ONNX / TensorRT)",
+      "x": 50,
+      "y": 410,
+      "color": "orange",
+      "icon": "box",
+      "category": "Deployment"
+    },
+    {
+      "id": "srv_1",
+      "label": "Serve API\n(Triton Server)",
       "x": 360,
-      "y": 80,
-      "color": "blue"
+      "y": 230,
+      "color": "orange",
+      "icon": "api",
+      "category": "API"
     },
     {
-      "id": "d_3",
-      "label": "3. Automated Test Suite\nExecute unit, integration & mocked API contracts",
-      "x": 640,
-      "y": 80,
-      "color": "blue"
+      "id": "csm_1",
+      "label": "Consume API\n(API Gateway)",
+      "x": 560,
+      "y": 230,
+      "color": "orange",
+      "icon": "api",
+      "category": "API"
     },
     {
-      "id": "d_4",
-      "label": "4. Container Image Build\nMulti-stage Dockerfile, vulnerability scan (Trivy)",
-      "x": 920,
-      "y": 80,
-      "color": "green"
+      "id": "csm_2",
+      "label": "Applications\n(Dashboards & Web)",
+      "x": 700,
+      "y": 230,
+      "color": "blue",
+      "icon": "app",
+      "category": "Application"
     },
     {
-      "id": "d_5",
-      "label": "5. Publish to Container Registry\nTag SHA & push to Google Artifact Registry / ECR",
-      "x": 920,
-      "y": 240,
-      "color": "green"
+      "id": "ext_user",
+      "label": "User\n(Enterprise Clients)",
+      "x": 740,
+      "y": 40,
+      "color": "blue",
+      "icon": "user",
+      "category": "Actor"
     },
     {
-      "id": "d_6",
-      "label": "6. Staging Environment Deployment\nHelm upgrade & automated smoke testing",
-      "x": 640,
-      "y": 240,
-      "color": "green"
-    },
-    {
-      "id": "d_7",
-      "label": "7. Canary Production Rollout\nDirect 10% traffic, monitor error rates & latency",
-      "x": 360,
-      "y": 240,
-      "color": "yellow"
-    },
-    {
-      "id": "d_8",
-      "label": "8. Full Promotion & Monitoring\n100% rollout, Datadog alerts & Prometheus metrics",
-      "x": 80,
-      "y": 240,
-      "color": "violet"
+      "id": "ext_monitor",
+      "label": "Monitor\n(Drift & Latency)",
+      "x": 880,
+      "y": 440,
+      "color": "cyan",
+      "icon": "monitor",
+      "category": "Monitoring"
     }
   ],
   "arrows": [
     {
-      "from": "d_1",
-      "to": "d_2"
+      "from": "ds_1",
+      "to": "ext_batch",
+      "label": "Raw Ingestion"
     },
     {
-      "from": "d_2",
-      "to": "d_3"
+      "from": "ext_batch",
+      "to": "ext_lake",
+      "label": "Stream Feed"
     },
     {
-      "from": "d_3",
-      "to": "d_4"
+      "from": "ext_lake",
+      "to": "dp_1",
+      "label": "Batch Read"
     },
     {
-      "from": "d_4",
-      "to": "d_5"
+      "from": "dp_1",
+      "to": "dp_2",
+      "label": "Cleaned"
     },
     {
-      "from": "d_5",
-      "to": "d_6"
+      "from": "dp_2",
+      "to": "dp_3",
+      "label": "Standardized"
     },
     {
-      "from": "d_6",
-      "to": "d_7"
+      "from": "dp_3",
+      "to": "dp_4",
+      "label": "Curated"
     },
     {
-      "from": "d_7",
-      "to": "d_8"
+      "from": "dp_4",
+      "to": "fe_2",
+      "label": "Gold Tables"
+    },
+    {
+      "from": "fe_2",
+      "to": "fe_1",
+      "label": "Vectors"
+    },
+    {
+      "from": "fe_1",
+      "to": "md_1",
+      "label": "Training Set"
+    },
+    {
+      "from": "md_1",
+      "to": "md_2",
+      "label": "Train Job"
+    },
+    {
+      "from": "md_2",
+      "to": "md_3",
+      "label": "Weights"
+    },
+    {
+      "from": "md_3",
+      "to": "md_4",
+      "label": "Checkpoints"
+    },
+    {
+      "from": "md_4",
+      "to": "dep_3",
+      "label": "Promoted"
+    },
+    {
+      "from": "dep_3",
+      "to": "dep_2",
+      "label": "Dockerize"
+    },
+    {
+      "from": "dep_2",
+      "to": "dep_1",
+      "label": "Deploy Image"
+    },
+    {
+      "from": "dep_1",
+      "to": "srv_1",
+      "label": "Active Replica"
+    },
+    {
+      "from": "srv_1",
+      "to": "csm_1",
+      "label": "Inference REST"
+    },
+    {
+      "from": "csm_1",
+      "to": "csm_2",
+      "label": "Responses"
+    },
+    {
+      "from": "csm_2",
+      "to": "ext_user",
+      "label": "Interactions"
+    },
+    {
+      "from": "csm_2",
+      "to": "ext_monitor",
+      "label": "Inference Logs"
+    },
+    {
+      "from": "ext_monitor",
+      "to": "md_1",
+      "label": "Drift Feedback"
     }
   ]
 }

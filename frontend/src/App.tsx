@@ -8,6 +8,7 @@ import { CreateItemMenu } from './features/navigation/BoardNavigation';
 import NavigationItemPage from './features/navigation/NavigationItemPage';
 import ProjectsPage from './features/projects/ProjectsPage';
 import TerminalPanel from './features/terminal/TerminalPanel';
+import { ArchitectureDesigner } from './features/architecture/ArchitectureDesigner';
 import type { Board, NavigationKind } from './types/board';
 import { NAVIGATION_KINDS, navigationKind } from './types/board';
 import type { Project } from './types/project';
@@ -259,6 +260,9 @@ function App() {
   }, [isDraggingSplitter, leftWidth, rightTab, currentRightWidth]);
   const [savedAt, setSavedAt] = useState('');
   const [zoomPercent, setZoomPercent] = useState(100);
+  const [canvasMode, setCanvasMode] = useState<'architecture' | 'whiteboard'>(() => {
+    return read<'architecture' | 'whiteboard'>('canvas-mode', 'architecture');
+  });
   const [attachments, setAttachments] = useState<LocalAttachment[]>([]);
   const [learningEnabled, setLearningEnabled] = useState(() => read<boolean>('ai-learning-enabled', true));
   const [learningMemories, setLearningMemories] = useState<FeedbackMemory[]>(() => read<FeedbackMemory[]>(`ai-feedback:${activeProject}`, []));
@@ -281,6 +285,7 @@ function App() {
   }, [activeProject]);
 
   useEffect(() => { localStorage.setItem('ai-learning-enabled', JSON.stringify(learningEnabled)); }, [learningEnabled]);
+  useEffect(() => { localStorage.setItem('canvas-mode', JSON.stringify(canvasMode)); }, [canvasMode]);
 
   useEffect(() => {
     localStorage.setItem('tree', JSON.stringify(boards));
@@ -1172,7 +1177,105 @@ function App() {
         <div className="panel-resizer-grip" />
       </div>
 
-      <div className="canvas-region">{view === 'board' ? <><div className="canvas-heading"><div><span className="eyebrow">VISUAL BOARD</span><h1>{board.name}</h1></div><span className="canvas-hint">Changes save automatically on this device</span></div><div className="canvas"><Tldraw key={active} onMount={mount} /><div className="canvas-controls" aria-label="Canvas view controls"><button title="Zoom out" onClick={() => editor?.zoomOut()}>−</button><span>{zoomPercent}%</span><button title="Zoom in" onClick={() => editor?.zoomIn()}>＋</button><i/><button title="Fit selection" onClick={() => editor?.zoomToSelection()}>Fit selection</button><button title="Fit board" onClick={() => editor?.zoomToFit()}>Fit board</button></div></div></> : <NavigationItemPage item={selectedItem} items={boards} onUpdate={updateNavigationItem} onCreate={createNavigationItem} onOpen={openNavigationItem} onOpenBoard={openBoard} />}</div>
+      <div className="canvas-region">
+        {view === 'board' ? (
+          <>
+            <div className="canvas-heading">
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                <div>
+                  <span className="eyebrow">VISUAL WORKSPACE</span>
+                  <h1>{board.name}</h1>
+                </div>
+
+                {/* Architecture Designer / Whiteboard Mode Switcher */}
+                <div
+                  className="canvas-mode-toggle"
+                  style={{
+                    display: 'flex',
+                    background: 'rgba(255, 255, 255, 0.06)',
+                    padding: '3px',
+                    borderRadius: 8,
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    marginLeft: 12,
+                  }}
+                >
+                  <button
+                    onClick={() => setCanvasMode('architecture')}
+                    style={{
+                      background: canvasMode === 'architecture' ? '#0284c7' : 'transparent',
+                      color: canvasMode === 'architecture' ? '#fff' : '#94a3b8',
+                      border: 'none',
+                      borderRadius: 6,
+                      padding: '4px 10px',
+                      fontSize: 11.5,
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 5,
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    <span>🏗️</span> Architecture Designer
+                  </button>
+                  <button
+                    onClick={() => setCanvasMode('whiteboard')}
+                    style={{
+                      background: canvasMode === 'whiteboard' ? '#0284c7' : 'transparent',
+                      color: canvasMode === 'whiteboard' ? '#fff' : '#94a3b8',
+                      border: 'none',
+                      borderRadius: 6,
+                      padding: '4px 10px',
+                      fontSize: 11.5,
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 5,
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    <span>🎨</span> Whiteboard
+                  </button>
+                </div>
+              </div>
+              <span className="canvas-hint">Changes save automatically to project disk</span>
+            </div>
+
+            <div className="canvas" style={{ position: 'relative' }}>
+              {canvasMode === 'architecture' ? (
+                <ArchitectureDesigner
+                  key={`${board.projectId}-${board.id}`}
+                  projectId={board.projectId}
+                  boardId={board.id}
+                  onStatusChange={setStatus}
+                />
+              ) : (
+                <>
+                  <Tldraw key={active} onMount={mount} />
+                  <div className="canvas-controls" aria-label="Canvas view controls">
+                    <button title="Zoom out" onClick={() => editor?.zoomOut()}>−</button>
+                    <span>{zoomPercent}%</span>
+                    <button title="Zoom in" onClick={() => editor?.zoomIn()}>＋</button>
+                    <i/>
+                    <button title="Fit selection" onClick={() => editor?.zoomToSelection()}>Fit selection</button>
+                    <button title="Fit board" onClick={() => editor?.zoomToFit()}>Fit board</button>
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        ) : (
+          <NavigationItemPage
+            item={selectedItem}
+            items={boards}
+            onUpdate={updateNavigationItem}
+            onCreate={createNavigationItem}
+            onOpen={openNavigationItem}
+            onOpenBoard={openBoard}
+          />
+        )}
+      </div>
 
       <div
         className={`panel-resizer right-resizer ${isDraggingSplitter === 'right' ? 'is-dragging' : ''}`}

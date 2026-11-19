@@ -1,229 +1,498 @@
 {
-  "version": 3,
-  "title": "HRMS project workflow",
-  "actors": [
+  "boardId": "5002cc2f-4786-49d1-8e40-bd5c863b8bab",
+  "nodes": [
     {
-      "id": "hr",
-      "label": "HR team",
-      "icon": "users"
+      "id": "ds_1",
+      "label": "Structured\n(SQL DB / Warehouse)",
+      "x": -544,
+      "y": 304,
+      "color": "violet",
+      "category": "Data Source",
+      "icon": "database",
+      "status": "completed"
     },
     {
-      "id": "employee",
-      "label": "Employee",
-      "icon": "user"
+      "id": "ds_2",
+      "label": "Semi-Structured\n(JSON, XML, CSV)",
+      "x": -96,
+      "y": -96,
+      "color": "orange",
+      "category": "Data Source",
+      "icon": "code",
+      "status": "completed"
+    },
+    {
+      "id": "ds_3",
+      "label": "Unstructured\n(Audio, Text, Media)",
+      "x": 416,
+      "y": -32,
+      "color": "blue",
+      "category": "Data Source",
+      "icon": "mail",
+      "status": "completed"
+    },
+    {
+      "id": "ext_batch",
+      "label": "Batch Ingestion\n(Kafka Streams)",
+      "x": 40,
+      "y": 880,
+      "color": "green",
+      "category": "Ingestion",
+      "icon": "pipeline",
+      "status": "completed"
+    },
+    {
+      "id": "ext_lake",
+      "label": "Data Lake\n(Delta Lake / Object Storage)",
+      "x": 260,
+      "y": 880,
+      "color": "cyan",
+      "category": "Storage",
+      "icon": "datalake",
+      "status": "completed"
+    },
+    {
+      "id": "dp_1",
+      "label": "Validate\n(Schema & Null Checks)",
+      "x": 420,
+      "y": 730,
+      "color": "green",
+      "category": "Pipeline",
+      "icon": "check",
+      "status": "completed"
+    },
+    {
+      "id": "dp_2",
+      "label": "Clean\n(Outliers & Imputation)",
+      "x": 550,
+      "y": 730,
+      "color": "cyan",
+      "category": "Pipeline",
+      "icon": "clean",
+      "status": "completed"
+    },
+    {
+      "id": "dp_3",
+      "label": "Standardise\n(Normalization)",
+      "x": 680,
+      "y": 730,
+      "color": "violet",
+      "category": "Pipeline",
+      "icon": "standardise",
+      "status": "completed"
+    },
+    {
+      "id": "dp_4",
+      "label": "Curate\n(Gold Tables)",
+      "x": 810,
+      "y": 730,
+      "color": "yellow",
+      "category": "Pipeline",
+      "icon": "file",
+      "status": "completed"
+    },
+    {
+      "id": "fe_1",
+      "label": "Select Features\n(Importance & Ranking)",
+      "x": 50,
+      "y": 600,
+      "color": "yellow",
+      "category": "Feature Engineering",
+      "icon": "features",
+      "status": "completed"
+    },
+    {
+      "id": "fe_2",
+      "label": "Extract Features\n(Vector Embeddings)",
+      "x": 50,
+      "y": 710,
+      "color": "orange",
+      "category": "Feature Engineering",
+      "icon": "features",
+      "status": "completed"
+    },
+    {
+      "id": "md_1",
+      "label": "Code\n(Notebooks & Git)",
+      "x": 300,
+      "y": 440,
+      "color": "orange",
+      "category": "Model",
+      "icon": "git",
+      "status": "completed"
+    },
+    {
+      "id": "md_2",
+      "label": "Train\n(Distributed GPU Cluster)",
+      "x": 430,
+      "y": 440,
+      "color": "red",
+      "category": "Model",
+      "icon": "brain",
+      "status": "completed"
+    },
+    {
+      "id": "md_3",
+      "label": "Validate\n(Hyperparameters)",
+      "x": 560,
+      "y": 440,
+      "color": "green",
+      "category": "Model",
+      "icon": "check",
+      "status": "completed"
+    },
+    {
+      "id": "md_4",
+      "label": "Evaluate\n(F1 & ROC-AUC)",
+      "x": 690,
+      "y": 440,
+      "color": "yellow",
+      "category": "Model",
+      "icon": "flask",
+      "status": "completed"
+    },
+    {
+      "id": "dep_1",
+      "label": "Deploy\n(Canary / Blue-Green)",
+      "x": 50,
+      "y": 220,
+      "color": "cyan",
+      "category": "Deployment",
+      "icon": "rocket",
+      "status": "completed"
+    },
+    {
+      "id": "dep_2",
+      "label": "Containerise\n(Docker & OCI Images)",
+      "x": 50,
+      "y": 315,
+      "color": "blue",
+      "category": "Deployment",
+      "icon": "container",
+      "status": "completed"
+    },
+    {
+      "id": "dep_3",
+      "label": "Package\n(ONNX / TensorRT)",
+      "x": 50,
+      "y": 410,
+      "color": "orange",
+      "category": "Deployment",
+      "icon": "box",
+      "status": "completed"
+    },
+    {
+      "id": "srv_1",
+      "label": "Serve API\n(Triton Server)",
+      "x": 360,
+      "y": 230,
+      "color": "orange",
+      "category": "API",
+      "icon": "api",
+      "status": "completed"
+    },
+    {
+      "id": "csm_1",
+      "label": "Consume API\n(API Gateway)",
+      "x": 560,
+      "y": 230,
+      "color": "orange",
+      "category": "API",
+      "icon": "api",
+      "status": "completed"
+    },
+    {
+      "id": "csm_2",
+      "label": "Applications\n(Dashboards & Web)",
+      "x": 700,
+      "y": 230,
+      "color": "blue",
+      "category": "Application",
+      "icon": "app",
+      "status": "completed"
+    },
+    {
+      "id": "ext_user",
+      "label": "User\n(Enterprise Clients)",
+      "x": 1088,
+      "y": -16,
+      "color": "blue",
+      "category": "Actor",
+      "icon": "user",
+      "status": "completed"
+    },
+    {
+      "id": "ext_monitor",
+      "label": "Monitor\n(Drift & Latency)",
+      "x": 880,
+      "y": 440,
+      "color": "cyan",
+      "category": "Monitoring",
+      "icon": "monitor",
+      "status": "completed"
     }
   ],
-  "modules": [
+  "arrows": [
     {
-      "id": "hiring",
-      "title": "Recruitment",
-      "steps": [
-        {
-          "id": "requisition",
-          "label": "Approve role",
-          "icon": "clipboard-list"
-        },
-        {
-          "id": "candidate",
-          "label": "Assess candidates",
-          "icon": "search"
-        },
-        {
-          "id": "offer",
-          "label": "Accept offer",
-          "icon": "handshake"
-        }
-      ]
+      "id": "e_ds_1_ext_batch_0",
+      "from": "ds_1",
+      "to": "ext_batch",
+      "label": "Raw Ingestion",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
     },
     {
-      "id": "people",
-      "title": "Employee onboarding",
-      "steps": [
-        {
-          "id": "documents",
-          "label": "Verify documents",
-          "icon": "file-check"
-        },
-        {
-          "id": "provision",
-          "label": "Provision access",
-          "icon": "rocket"
-        },
-        {
-          "id": "master",
-          "label": "Employee record",
-          "icon": "database"
-        }
-      ]
+      "id": "e_ext_batch_ext_lake_1",
+      "from": "ext_batch",
+      "to": "ext_lake",
+      "label": "Stream Feed",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
     },
     {
-      "id": "time",
-      "title": "Time & attendance",
-      "steps": [
-        {
-          "id": "capture",
-          "label": "Capture time",
-          "icon": "clock"
-        },
-        {
-          "id": "reconcile",
-          "label": "Reconcile leave",
-          "icon": "calendar-days"
-        },
-        {
-          "id": "approve_time",
-          "label": "Approve period",
-          "icon": "circle-check"
-        }
-      ]
+      "id": "e_ext_lake_dp_1_2",
+      "from": "ext_lake",
+      "to": "dp_1",
+      "label": "Batch Read",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
     },
     {
-      "id": "pay",
-      "title": "Payroll & delivery",
-      "steps": [
-        {
-          "id": "calculate",
-          "label": "Calculate payroll",
-          "icon": "calculator"
-        },
-        {
-          "id": "authorize",
-          "label": "Approve payroll",
-          "icon": "shield-check"
-        },
-        {
-          "id": "bank",
-          "label": "Release payment",
-          "icon": "landmark"
-        },
-        {
-          "id": "payslip",
-          "label": "Publish payslip",
-          "icon": "receipt"
-        }
-      ]
+      "id": "e_dp_1_dp_2_3",
+      "from": "dp_1",
+      "to": "dp_2",
+      "label": "Cleaned",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
     },
     {
-      "id": "learning",
-      "title": "Training & knowledge",
-      "steps": [
-        {
-          "id": "review",
-          "label": "Review skills",
-          "icon": "target"
-        },
-        {
-          "id": "train",
-          "label": "Complete training",
-          "icon": "graduation-cap"
-        },
-        {
-          "id": "knowledge",
-          "label": "Publish guides",
-          "icon": "book-open"
-        }
-      ]
+      "id": "e_dp_2_dp_3_4",
+      "from": "dp_2",
+      "to": "dp_3",
+      "label": "Standardized",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
     },
     {
-      "id": "exit",
-      "title": "Separation",
-      "steps": [
-        {
-          "id": "request_exit",
-          "label": "Approve exit",
-          "icon": "log-out"
-        },
-        {
-          "id": "clearance",
-          "label": "Clear assets",
-          "icon": "package-check"
-        },
-        {
-          "id": "settle",
-          "label": "Final settlement",
-          "icon": "briefcase-business"
-        }
-      ]
+      "id": "e_dp_3_dp_4_5",
+      "from": "dp_3",
+      "to": "dp_4",
+      "label": "Curated",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_dp_4_fe_2_6",
+      "from": "dp_4",
+      "to": "fe_2",
+      "label": "Gold Tables",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_fe_2_fe_1_7",
+      "from": "fe_2",
+      "to": "fe_1",
+      "label": "Vectors",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_fe_1_md_1_8",
+      "from": "fe_1",
+      "to": "md_1",
+      "label": "Training Set",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_md_1_md_2_9",
+      "from": "md_1",
+      "to": "md_2",
+      "label": "Train Job",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_md_2_md_3_10",
+      "from": "md_2",
+      "to": "md_3",
+      "label": "Weights",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_md_3_md_4_11",
+      "from": "md_3",
+      "to": "md_4",
+      "label": "Checkpoints",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_md_4_dep_3_12",
+      "from": "md_4",
+      "to": "dep_3",
+      "label": "Promoted",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_dep_3_dep_2_13",
+      "from": "dep_3",
+      "to": "dep_2",
+      "label": "Dockerize",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_dep_2_dep_1_14",
+      "from": "dep_2",
+      "to": "dep_1",
+      "label": "Deploy Image",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_dep_1_srv_1_15",
+      "from": "dep_1",
+      "to": "srv_1",
+      "label": "Active Replica",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_srv_1_csm_1_16",
+      "from": "srv_1",
+      "to": "csm_1",
+      "label": "Inference REST",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_csm_1_csm_2_17",
+      "from": "csm_1",
+      "to": "csm_2",
+      "label": "Responses",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_csm_2_ext_user_18",
+      "from": "csm_2",
+      "to": "ext_user",
+      "label": "Interactions",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_csm_2_ext_monitor_19",
+      "from": "csm_2",
+      "to": "ext_monitor",
+      "label": "Inference Logs",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
+    },
+    {
+      "id": "e_ext_monitor_md_1_20",
+      "from": "ext_monitor",
+      "to": "md_1",
+      "label": "Drift Feedback",
+      "type": "dataflow",
+      "animated": true,
+      "color": "#f97316"
     }
   ],
-  "flows": [
+  "groups": [
     {
-      "from": "hr",
-      "to": "requisition",
-      "type": "main",
-      "label": "Approved headcount"
+      "id": "grp_datasources",
+      "title": "Data Sources",
+      "x": 30,
+      "y": 20,
+      "w": 480,
+      "h": 130,
+      "color": "violet",
+      "category": "Ingress"
     },
     {
-      "from": "offer",
-      "to": "documents",
-      "type": "main",
-      "label": "Accepted candidate"
+      "id": "grp_deployment",
+      "title": "Model Deployment",
+      "x": 30,
+      "y": 180,
+      "w": 220,
+      "h": 340,
+      "color": "cyan",
+      "category": "CD / Runtime"
     },
     {
-      "from": "master",
-      "to": "capture",
-      "type": "main",
-      "label": "Employee & schedule"
+      "id": "grp_serve",
+      "title": "Serve",
+      "x": 340,
+      "y": 190,
+      "w": 160,
+      "h": 130,
+      "color": "orange",
+      "category": "Inference"
     },
     {
-      "from": "approve_time",
-      "to": "calculate",
-      "type": "main",
-      "label": "Approved payable days"
+      "id": "grp_consume",
+      "title": "Consume",
+      "x": 540,
+      "y": 190,
+      "w": 320,
+      "h": 130,
+      "color": "blue",
+      "category": "Client Facing"
     },
     {
-      "from": "master",
-      "to": "review",
-      "type": "main",
-      "label": "Role & objectives"
+      "id": "grp_modeldev",
+      "title": "Model Development",
+      "x": 280,
+      "y": 400,
+      "w": 520,
+      "h": 150,
+      "color": "red",
+      "category": "Training & Eval"
     },
     {
-      "from": "master",
-      "to": "request_exit",
-      "type": "main",
-      "label": "Authorized separation"
+      "id": "grp_features",
+      "title": "Feature Engineering",
+      "x": 30,
+      "y": 560,
+      "w": 200,
+      "h": 260,
+      "color": "yellow",
+      "category": "Feature Store"
     },
     {
-      "from": "settle",
-      "to": "calculate",
-      "type": "main",
-      "label": "Final payment draft"
-    },
-    {
-      "from": "payslip",
-      "to": "employee",
-      "type": "output",
-      "label": "Payslip available"
-    },
-    {
-      "from": "knowledge",
-      "to": "employee",
-      "type": "output",
-      "label": "Published policies"
-    },
-    {
-      "from": "knowledge",
-      "to": "review",
-      "type": "feedback",
-      "label": "Learning outcomes"
-    },
-    {
-      "from": "authorize",
-      "to": "calculate",
-      "type": "feedback",
-      "label": "Corrections required"
-    },
-    {
-      "from": "bank",
-      "to": "authorize",
-      "type": "feedback",
-      "label": "Reconcile failed payment"
-    },
-    {
-      "from": "approve_time",
-      "to": "capture",
-      "type": "feedback",
-      "label": "Resolve time exceptions"
+      "id": "grp_datapipeline",
+      "title": "Data Pipeline",
+      "x": 400,
+      "y": 690,
+      "w": 520,
+      "h": 150,
+      "color": "green",
+      "category": "ETL Processing"
     }
   ]
 }

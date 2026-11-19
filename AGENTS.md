@@ -20,6 +20,7 @@ python3 board_tool.py design "Microservice order processing with Kafka and Postg
 
 ### 2. Instant Pre-built Architecture Blueprints
 ```bash
+python3 board_tool.py draw-mlops      # Enterprise MLOps, Data Pipeline & Model Deployment
 python3 board_tool.py draw-hrms       # HRMS, Attendance, Payroll & Offboarding
 python3 board_tool.py draw-hospital   # Hospital clinical pathway & EHR
 python3 board_tool.py draw-ecommerce  # E-commerce store, checkout & fulfillment
