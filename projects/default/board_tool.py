@@ -360,11 +360,13 @@ def apply_blueprint(key: str):
 
 
 def cmd_design(prompt: str):
-    """Generates a complete multi-step flowchart based on a natural language prompt."""
+    """Generates a complete multi-step architecture based on a natural language prompt."""
     p_lower = prompt.lower()
     
     # 1. Match known blueprints
-    if any(k in p_lower for k in ["hrms", "hr", "recruit", "payroll", "employee", "leave", "onboard"]):
+    if any(k in p_lower for k in ["mlops", "machine learning", "ml ", "model", "train", "inference", "feature store", "neural", "ai pipeline", "deep learning"]):
+        return apply_blueprint("mlops")
+    elif any(k in p_lower for k in ["hrms", "hr", "recruit", "payroll", "employee", "leave", "onboard"]):
         return apply_blueprint("hrms")
     elif any(k in p_lower for k in ["hospital", "patient", "clinic", "doctor", "health", "triage", "medical"]):
         return apply_blueprint("hospital")
@@ -408,7 +410,12 @@ def cmd_design(prompt: str):
             prev_id = f"step_{idx-1}"
             arrows.append({"from": prev_id, "to": nid})
             
-    data = {"title": title, "nodes": nodes, "arrows": arrows}
+    groups = [
+        {"id": "grp_ingress", "title": "Client & Ingress Tier", "x": 40, "y": 40, "w": 680, "h": 150, "color": "blue", "category": "Gateway"},
+        {"id": "grp_engine", "title": "Core Processing & Engine", "x": 40, "y": 220, "w": 680, "h": 150, "color": "green", "category": "Services"},
+        {"id": "grp_storage", "title": "Data Storage & Bus", "x": 40, "y": 400, "w": 680, "h": 150, "color": "violet", "category": "Data Tier"},
+    ]
+    data = {"title": title, "groups": groups, "nodes": nodes, "arrows": arrows}
     save_board(data)
     print(f"✓ Generated custom architecture design for: '{prompt}'!")
     print(f"Nodes: {len(nodes)}, Arrows: {len(arrows)}.")
